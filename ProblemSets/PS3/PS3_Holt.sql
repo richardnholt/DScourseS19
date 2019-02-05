@@ -24,7 +24,7 @@ CREATE TABLE FLInsur(
 --Print out the first ten rows
 SELECT * FROM FLInsur LIMIT 10;
 --List out the counties in the sample
-SELECT county FROM FLInsur;
+SELECT county, COUNT(*) FROM FLInsur GROUP BY county;
 --Compute average property appreciation from 2011-2012
 SELECT AVG(tiv_2012 - tiv_2011) FROM FLInsur;
 --Create a frequency table of the construction variable to see what fraction
