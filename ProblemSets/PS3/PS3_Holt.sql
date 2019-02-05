@@ -15,7 +15,8 @@ CREATE TABLE FLInsur(
   "fr_site_deductible",
   "point_latitude",
   "point_longitude",
-  "line,construction",
+  "line",
+  "construction",
   "point_granularity" 
 );
 .mode csv
