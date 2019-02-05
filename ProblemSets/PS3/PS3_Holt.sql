@@ -2,7 +2,8 @@
 CREATE TABLE FLInsur(
   "policyID",
   "statecode",
-  "county,eq_site_limit",
+  "county",
+  "eq_site_limit",
   "hu_site_limit",
   "fl_site_limit",
   "fr_site_limit",
