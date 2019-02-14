@@ -1,0 +1,6 @@
+library(rvest)
+library(stringr)
+library(dplyr)
+webpage <- read_html("https://www.cnn.com/2019/02/12/politics/donald-trump-el-paso-beto-orourke/index.html")
+results <- webpage %>%
+	html_nodes("strong")
