@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{PS7 Holt}
+\author{richard.n.holt }
+\date{March 2019}
+
+\begin{document}
+
+\section{Introduction}
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+logwage & 1,669 & 1.625 & 0.386 & 0.005 & 1.362 & 1.936 & 2.261 \\ 
+hgc & 2,229 & 13.101 & 2.524 & 0 & 12 & 15 & 18 \\ 
+tenure & 2,229 & 5.971 & 5.507 & 0.000 & 1.583 & 9.333 & 25.917 \\ 
+age & 2,229 & 39.152 & 3.062 & 34 & 36 & 42 & 46 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Logwages are missing at a rate of about .25 in the given table of values. The logwage variable is most likely to be MNAR because the missing values are likely attributed to reasons in people's personal lives that would prevent them from having or reporting a wage.
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & logwage & mean\_logwage & predict\_logwage \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ hgc & 0.046$^{***}$ & 0.050$^{***}$ & 0.062$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) \\ 
+  & & & \\ 
+ collegenot college grad &  & 0.168$^{***}$ & 0.145$^{***}$ \\ 
+  &  & (0.026) & (0.025) \\ 
+  & & & \\ 
+ tenure & 0.050$^{***}$ & 0.038$^{***}$ & 0.050$^{***}$ \\ 
+  & (0.005) & (0.004) & (0.004) \\ 
+  & & & \\ 
+ I(tenure$\hat{\mkern6mu}$2) & $-$0.002$^{***}$ & $-$0.001$^{***}$ & $-$0.002$^{***}$ \\ 
+  & (0.0003) & (0.0002) & (0.0002) \\ 
+  & & & \\ 
+ age & 0.0001 & 0.0002 & 0.0004 \\ 
+  & (0.003) & (0.002) & (0.002) \\ 
+  & & & \\ 
+ marriedsingle & $-$0.021 & $-$0.027$^{**}$ & $-$0.022$^{*}$ \\ 
+  & (0.018) & (0.014) & (0.013) \\ 
+  & & & \\ 
+ Constant & 0.879$^{***}$ & 0.708$^{***}$ & 0.534$^{***}$ \\ 
+  & (0.121) & (0.116) & (0.112) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 1,669 & 2,229 & 2,229 \\ 
+R$^{2}$ & 0.200 & 0.147 & 0.277 \\ 
+Adjusted R$^{2}$ & 0.198 & 0.145 & 0.275 \\ 
+Residual Std. Error & 0.345 (df = 1663) & 0.308 (df = 2222) & 0.297 (df = 2222) \\ 
+F Statistic & 83.121$^{***}$ (df = 5; 1663) & 63.973$^{***}$ (df = 6; 2222) & 141.686$^{***}$ (df = 6; 2222) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+It seems that the mice package provides the best estimation of the beta value. The different imputation methods seem to skew the data away from the apparent beta value consistently with the dependents. The mean imputation draws the function higher than the initial logwage, but not as high as the predictive function, which is intuitive when considering those variables in context.
+
+\section{Progress on the Final Project}
+I have decided to look at the effects of the Dodd-Frank regulations on bank and consumer behavior after the financial crash. I have looked into a few studies that have been done on this matter, and I specifically want to understand whether new mortgage application rates were effected more by the safety of the regulations or whether consumer behavior in all areas shifted in ways consistent with recession spending. It would also be important to look at whether banks engaged in more or fewer risky behaviors. I have thought about using JP Morgan VaR data to understand how VaR changes after the financial crash. I would like to see whether the change in behavior that brought about the re-stabilization of the housing market was reflective of the consumer behavior or the change in banking behavior.
+
+After writing all of that out, I would like to use the variables of new home mortgage applications and VaR to see which were more consistent with the size of the housing market after the crash. Theoretically, JP Morgan would have taken on less risk after the implementation of the Dodd-Frank regulations. Below are links that I have considered for data:
+
+\url{www.ycharts.com/companies/JPM/historical_daily_var_1_all}
+
+\url{www.tradingeconomics.com/united-states/mortgage-applications}
+
+\end{document}
