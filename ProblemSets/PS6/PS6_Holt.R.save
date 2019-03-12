@@ -1,0 +1,34 @@
+library(twitteR)
+library(tm)
+library(wordcloud)
+library(RColorBrewer)
+library(SnowballC)
+library(syuzhet)
+library(tidytext)
+library(ggplot2)
+library(forcats)
+library(dplyr)
+
+webpage	<- read_html("https://www.imdb.com/list/ls021105452/")
+results	<- webpage %>%
+  html_nodes(".mode-detail")
+
+records <- vector("list", length = length(results))
+for (i in seq_along(results)) {
+  time <- results[i] %>% 
+    html_nodes(".lister-item-header") %>% 
+    html_text(trim = TRUE) %>%
+    str_c(', February 12') %>%
+    str_sub(7)
+  show <- results[i] %>%
+    html_nodes(".show-name") %>%
+    html_text(trim = TRUE)%>%
+    str_c(" --")
+  episode <- results[i] %>%
+    html_nodes(".episode-title") %>%
+    html_text(trim = TRUE)%>%
+    str_c(" --")
+  records[[i]] <- data_frame(show=show, episode=episode, time=time)
+}
+df <- bind_rows(records)
+df
