@@ -83,6 +83,9 @@ prediction <- predict(finalModel, newdata = housing.test)
 
 print(head(prediction$data))
 
+out.of.sample.rmse <- sqrt(mean((prediction$data$truth-prediction$data$response)^2))
+out.of.sample.rmse
+
 ###########################################################################################
 # Ridge
 ###########################################################################################
@@ -113,6 +116,8 @@ prediction <- predict(finalModel, newdata = housing.test)
 
 print(head(prediction$data))
 
+out.of.sample.rmse2 <- sqrt(mean((prediction$data$truth-prediction$data$response)^2))
+out.of.sample.rmse2
 
 ###########################################################################################
 # Elastic Net
@@ -143,3 +148,6 @@ finalModel
 prediction <- predict(finalModel, newdata = housing.test)
 
 print(head(prediction$data))
+
+out.of.sample.rmse3 <- sqrt(mean((prediction$data$truth-prediction$data$response)^2))
+out.of.sample.rmse3
