@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{PS10 Holt}
+\author{richard.n.holt }
+\date{April 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Tuning Parameters Optimal Values}
+
+\begin{center}
+ \begin{tabular}{||c c c c c c c||} 
+ \hline
+  & Trees & Logistic & Neural & Bayes & KNN & SVM \\ [0.5ex] 
+ \hline\hline
+ Opt. F1 & 0.8901134 & 0.8971736 & 0.9067016 & 0.9067016 & 0.8975309 & 0.9056775 \\ 
+ \hline
+ Opt. G & 0.6856084 & 0.6620844 & 0.7574449 & 0.7574449 & 0.7467755 & 0.7350348 \\ 
+ \hline
+ Out-of-Sample & 0.08536773 & 0.08659604 & 0.03731 & 0.009672962 & 0.02456625 & 0.04667588 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\end{document}
